@@ -123,13 +123,13 @@
 
 @media (max-width: 1200px) {
   .member {
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 20px); /* 调整为三列布局 */
   }
 }
 
 @media (max-width: 900px) {
   .member {
-    width: calc(100% / 2 - 20px);
+    width: calc(100% / 2 - 20px); /* 调整为两列布局 */
   }
 
   .title {
@@ -145,7 +145,7 @@
 
 @media (max-width: 600px) {
   .member {
-    width: calc(100% - 20px);
+    width: calc(100% / 3 - 20px); /* 调整为三列布局 */
   }
 
   .title {

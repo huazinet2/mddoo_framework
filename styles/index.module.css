@@ -142,7 +142,7 @@
     align-items: center; /* 居中对齐卡片内容 */
     padding: 20px; /* 增加卡片内的间距 */
     box-sizing: border-box;
-    margin-bottom: 20px; /* 确保卡片不会重叠 */
+    margin-bottom: 8px; /* 确保卡片不会重叠 */
   }
 
   .cardFace {

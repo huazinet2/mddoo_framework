@@ -47,63 +47,54 @@
   backface-visibility: hidden;
   border-radius: 15px;
   transition: transform 0.8s;
-  display: grid;
-  grid-template-columns: 25% 25% 50%; /* 划分成3列 */
-  grid-template-rows: 50% 50%; /* 划分成2行 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly; /* 均匀分布内容 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  padding: 10px;
+}
+
+.cardFront {
   background-color: rgba(255, 255, 255, 0.9);
 }
 
-.memberImage {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.cardBack {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: rotateY(180deg);
 }
 
-.memberImage img {
+.flipped .cardFront {
+  transform: rotateY(180deg);
+}
+
+.flipped .cardBack {
+  transform: rotateY(0deg);
+}
+
+.memberImage {
   border-radius: 50%;
-  max-width: 80px;
-  max-height: 80px;
+  max-width: 100px; /* 设置头像最大宽度 */
+  max-height: 100px; /* 设置头像最大高度 */
 }
 
 .memberName {
-  grid-column: 2 / 3;
-  grid-row: 1 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   font-size: 1.5em;
+  display: inline-block; /* 使名字和"神车"在同一行 */
+  vertical-align: middle;
 }
 
 .memberPosition {
-  grid-column: 3 / 4;
-  grid-row: 1 / 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3em;
+  font-size: 1.3em; /* 增大职位字体 */
   background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
   background-size: 200% 200%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
-}
-
-.memberDescription {
-  grid-column: 2 / 4;
-  grid-row: 2 / 3;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #333;
-  font-size: 1em;
-  padding: 0 10px;
+  display: inline-block; /* 使名字和职位在同一行 */
+  margin-left: 10px; /* 调整名字和"神车"之间的间距 */
+  vertical-align: middle; /* 垂直居中 */
 }
 
 @keyframes gradientAnimation {
@@ -115,37 +106,85 @@
   }
 }
 
-/* 小屏幕布局调整 */
+.memberDescription {
+  padding: 0 20px;
+  text-align: center;
+  color: #333;
+  min-height: 60px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #004d40;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #00796b;
+  text-align: center; /* 使文本居中 */
+}
+
+/* 修改小屏幕布局 */
 @media (max-width: 600px) {
   .teamContainer {
-    flex-direction: column;
+    flex-direction: column; /* 纵向布局，确保每行一个卡片 */
   }
 
   .member {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    margin-bottom: 20px;
+    width: 100%; /* 每个卡片占据整行 */
+    max-width: 100%; /* 取消卡片最大宽度限制 */
+    height: auto; /* 自动调整高度 */
+    display: grid;
+    grid-template-columns: 25% 25% 50%; /* 根据图中的红线划分三列 */
+    grid-template-rows: 50% 50%; /* 划分两行 */
+    gap: 10px;
+    padding: 10px; /* 增加内边距 */
+    margin-bottom: 20px; /* 确保卡片不会重叠 */
+    box-sizing: border-box;
   }
 
-  .cardFace {
-    grid-template-columns: 25% 25% 50%;
-    grid-template-rows: 50% 50%;
-    padding: 10px;
+  .memberImage {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .memberImage img {
     max-width: 60px;
     max-height: 60px;
+    border-radius: 50%;
   }
 
-  .memberName, .memberPosition {
+  .memberName {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+  }
+
+  .memberPosition {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 1.2em;
   }
 
   .memberDescription {
-    font-size: 0.9em;
-    padding: 0 5px;
+    grid-column: 2 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+    padding-left: 10px;
   }
 }
 

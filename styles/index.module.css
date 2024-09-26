@@ -145,22 +145,29 @@
 
 @media (max-width: 600px) {
   .teamContainer {
-    flex-direction: column; /* 卡片纵向排列 */
+    flex-direction: column; /* 纵向布局，确保每行一个卡片 */
   }
 
   .member {
-    display: flex;
-    flex-direction: row; /* 使卡片横向布局 */
-    justify-content: center;
-    width: 100%; /* 使卡片占满行 */
-    height: auto; /* 自动适应高度 */
+    width: 100%; /* 每个卡片占据整行 */
+    max-width: 100%; /* 取消卡片最大宽度限制 */
+    height: auto; /* 自动调整高度 */
+  }
+
+  .cardFace {
+    flex-direction: row; /* 使图片和文字并排显示 */
+    align-items: center;
+    justify-content: flex-start;
   }
 
   .memberImage {
     max-width: 80px; /* 调整头像大小以适应横向布局 */
     max-height: 80px;
-    margin-top: 0;
-    margin-right: 10px; /* 为文字腾出空间 */
+    margin: 0 10px; /* 设置图片与文字的间距 */
+  }
+
+  .memberName, .memberPosition, .memberDescription {
+    text-align: left; /* 调整文本左对齐 */
   }
 
   .title {

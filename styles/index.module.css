@@ -140,12 +140,13 @@
     flex-direction: row; /* 横向排列卡片内容 */
     justify-content: flex-start; /* 保持图片和内容左对齐 */
     align-items: center; /* 居中对齐卡片内容 */
-    padding: 10px; /* 增加卡片内的间距 */
+    padding: 20px; /* 增加卡片内的间距 */
     box-sizing: border-box;
-    margin-bottom: 10px; /* 调整卡片之间的间距 */
+    margin-bottom: 20px; /* 确保卡片不会重叠 */
   }
 
   .cardFace {
+    position: relative; /* 移除 position: absolute 避免卡片重叠 */
     display: flex;
     width: 100%;
     height: auto;

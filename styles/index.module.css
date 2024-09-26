@@ -25,7 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 20px; /* 卡片之间的间距 */
   margin-top: 40px;
   width: 100%;
   max-width: 1200px;
@@ -53,6 +53,7 @@
   justify-content: space-evenly; /* 均匀分布内容 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  padding: 10px; /* 给卡片内容留出边距 */
 }
 
 .cardFront {
@@ -142,6 +143,7 @@
     align-items: center; /* 居中对齐卡片内容 */
     padding: 20px; /* 增加卡片内的间距 */
     box-sizing: border-box;
+    margin-bottom: 20px; /* 每个卡片之间的间距 */
   }
 
   .cardFace {
@@ -150,6 +152,7 @@
     height: auto;
     flex-direction: row;
     justify-content: space-between;
+    padding: 15px; /* 卡片内元素之间留出足够间距 */
   }
 
   .memberImage, .memberName, .memberPosition, .memberDescription {

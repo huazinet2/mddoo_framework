@@ -76,12 +76,14 @@
   border-radius: 50%;
   max-width: 100px; /* 设置头像最大宽度 */
   max-height: 100px; /* 设置头像最大高度 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .memberName {
   font-size: 1.5em;
-  display: inline-block;
-  text-align: center; /* 名字居中 */
+  text-align: center;
 }
 
 .memberPosition {
@@ -92,8 +94,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
-  display: inline-block;
-  text-align: center; /* 文字水平居中 */
+  text-align: center;
 }
 
 @keyframes gradientAnimation {
@@ -108,7 +109,7 @@
 .memberDescription {
   text-align: center; /* 文本居中 */
   color: #333;
-  padding: 0 10px; /* 简介的内边距 */
+  padding: 0 20px; /* 简介的内边距 */
 }
 
 .title {
@@ -134,8 +135,12 @@
     width: 100%;
     max-width: 100%;
     height: auto;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 两列布局 */
+    grid-template-rows: auto auto; /* 两行布局 */
+    grid-template-areas: 
+      "image name position"
+      "description description description";
     justify-content: space-between;
     align-items: center;
     padding: 15px; /* 增加卡片内的间距 */
@@ -143,40 +148,33 @@
     margin-bottom: 20px;
   }
 
-  .cardFace {
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: auto;
-    justify-content: space-between;
-  }
-
-  .memberImage, .memberName, .memberPosition, .memberDescription {
-    flex: 1 1 50%; /* 每个元素占四分之一区域 */
-    padding: 10px;
+  .memberImage {
+    grid-area: image;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    box-sizing: border-box;
-  }
-
-  .memberImage {
-    flex: 1 1 25%; /* 头像占左侧区域 */
   }
 
   .memberName {
-    flex: 1 1 25%; /* 名字占右侧上方 */
+    grid-area: name;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .memberPosition {
-    flex: 1 1 25%; /* 职位占右侧中间 */
+    grid-area: position;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .memberDescription {
-    flex: 1 1 100%; /* 简介占下方 */
-    text-align: center; /* 文本居中 */
+    grid-area: description;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
   }
 }
 

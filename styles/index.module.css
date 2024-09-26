@@ -37,6 +37,7 @@
   height: 420px; /* 增加卡片高度 */
   position: relative;
   perspective: 1000px;
+  margin-bottom: 20px; /* 增加卡片之间的间距 */
 }
 
 .cardFace {
@@ -152,18 +153,23 @@
     width: 100%; /* 每个卡片占据整行 */
     max-width: 100%; /* 取消卡片最大宽度限制 */
     height: auto; /* 自动调整高度 */
+    display: flex; /* 使每个卡片内容横向排列 */
+    flex-direction: row; /* 横向排列卡片内容 */
+    justify-content: flex-start; /* 保持图片和内容左对齐 */
+    align-items: center; /* 居中对齐卡片内容 */
+    padding: 20px; /* 增加卡片内的间距 */
+    box-sizing: border-box;
   }
 
   .cardFace {
-    flex-direction: row; /* 使图片和文字并排显示 */
-    align-items: center;
+    flex-direction: row; /* 图片和文字横向排列 */
     justify-content: flex-start;
   }
 
   .memberImage {
     max-width: 80px; /* 调整头像大小以适应横向布局 */
     max-height: 80px;
-    margin: 0 10px; /* 设置图片与文字的间距 */
+    margin-right: 20px; /* 设置图片与文字之间的间距 */
   }
 
   .memberName, .memberPosition, .memberDescription {

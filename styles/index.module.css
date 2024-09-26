@@ -137,10 +137,10 @@
     max-width: 100%; /* 取消卡片最大宽度限制 */
     height: auto; /* 自动调整高度 */
     display: grid;
-    grid-template-columns: 25% 25% 50%; /* 根据图中的红线划分三列 */
-    grid-template-rows: 50% 50%; /* 划分两行 */
+    grid-template-columns: 1fr 1fr 1fr; /* 根据头像、名字、神车、简介分为三列 */
+    grid-template-rows: 1fr 1fr; /* 两行布局 */
     gap: 10px;
-    padding: 10px; /* 增加内边距 */
+    padding: 20px; /* 卡片内边距 */
     margin-bottom: 20px; /* 确保卡片不会重叠 */
     box-sizing: border-box;
   }
@@ -151,12 +151,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-
-  .memberImage img {
-    max-width: 60px;
-    max-height: 60px;
-    border-radius: 50%;
+    margin: auto; /* 确保头像居中 */
   }
 
   .memberName {
@@ -165,7 +160,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2em;
+    text-align: center;
   }
 
   .memberPosition {
@@ -174,7 +169,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.2em;
+    text-align: center;
   }
 
   .memberDescription {
@@ -184,7 +179,6 @@
     align-items: center;
     justify-content: center;
     text-align: left;
-    padding-left: 10px;
   }
 }
 

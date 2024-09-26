@@ -7,25 +7,25 @@
   align-items: center;
   background: linear-gradient(135deg, #ffe9fb, #e4fef6);
   padding-top: 20px;
-  padding-bottom: 50px;
+  padding-bottom: 50px; /* 为底部留出空间 */
 }
 
 .logoContainer {
   position: relative;
-  margin: 0 auto;
-  margin-top: 20px;
+  margin: 0 auto; /* 将 Logo 居中对齐 */
+  margin-top: 20px; /* 调整顶部间距 */
 }
 
 .logoContainer svg {
-  width: 150px;
-  height: 150px;
+  width: 150px; /* 调整 Logo 的宽度 */
+  height: 150px; /* 调整 Logo 的高度 */
 }
 
 .teamContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 10px; /* 减小卡片之间的间距 */
   margin-top: 40px;
   width: 100%;
   max-width: 1200px;
@@ -33,54 +33,68 @@
 
 .member {
   width: calc(100% / 4 - 20px);
-  max-width: 300px;
-  height: 120px; /* 减小卡片高度 */
+  max-width: 300px; /* 增加最大宽度 */
+  height: 420px; /* 增加卡片高度 */
   position: relative;
-  display: flex;
-  align-items: center; /* 垂直居中 */
-  margin-bottom: 10px;
+  perspective: 1000px;
+  margin-bottom: 10px; /* 减少卡片之间的垂直间距 */
 }
 
 .cardFace {
-  display: flex;
-  align-items: center;
+  position: absolute;
   width: 100%;
   height: 100%;
+  backface-visibility: hidden;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 0.9);
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 使内容垂直居中 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  padding: 20px;
-  box-sizing: border-box;
+  backdrop-filter: blur(10px);
+}
+
+.cardFront {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.cardBack {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: rotateY(180deg);
+}
+
+.flipped .cardFront {
+  transform: rotateY(180deg);
+}
+
+.flipped .cardBack {
+  transform: rotateY(0deg);
 }
 
 .memberImage {
   border-radius: 50%;
-  max-width: 100px;
+  max-width: 100px; /* 调整头像大小 */
   max-height: 100px;
-  margin-right: 20px;
-}
-
-.memberNameAndPosition {
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  margin-right: 15px; /* 调整头像与文字的间距 */
 }
 
 .memberName {
   font-size: 1.5em;
-  display: inline-block;
+  display: inline-block; /* 使名字和"神车"在同一行 */
 }
 
 .memberPosition {
-  font-size: 1.2em;
+  font-size: 1.3em; /* 增大职位字体 */
   background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
   background-size: 200% 200%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
-  display: inline-block;
-  vertical-align: middle;
+  display: inline-block; /* 使名字和职位在同一行 */
+  margin-left: 10px; /* 调整名字和"神车"之间的间距 */
+  vertical-align: middle; /* 垂直居中 */
 }
 
 @keyframes gradientAnimation {
@@ -94,9 +108,9 @@
 
 .memberDescription {
   padding: 0 20px;
-  text-align: left;
+  text-align: center;
   color: #333;
-  flex: 1;
+  min-height: 60px;
 }
 
 .title {
@@ -109,18 +123,18 @@
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #00796b;
-  text-align: center;
+  text-align: center; /* 使文本居中 */
 }
 
 @media (max-width: 1200px) {
   .member {
-    width: calc(100% / 3 - 20px);
+    width: calc(100% / 3 - 20px); /* 调整为三列布局 */
   }
 }
 
 @media (max-width: 900px) {
   .member {
-    width: calc(100% / 2 - 20px);
+    width: calc(100% / 2 - 20px); /* 调整为两列布局 */
   }
 
   .title {
@@ -130,32 +144,43 @@
   .description {
     font-size: 1.1rem;
     margin-bottom: 20px;
+    text-align: center; /* 使文本居中 */
   }
 }
 
+/* 只在小屏幕（600px以下）下生效的样式 */
 @media (max-width: 600px) {
   .teamContainer {
-    flex-direction: column;
+    flex-direction: column; /* 纵向布局，确保每行一个卡片 */
   }
 
   .member {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    padding: 20px;
+    width: 100%; /* 每个卡片占据整行 */
+    max-width: 100%; /* 取消卡片最大宽度限制 */
+    height: auto; /* 自动调整高度 */
+    display: flex; /* 使每个卡片内容横向排列 */
+    flex-direction: row; /* 横向排列卡片内容 */
+    justify-content: flex-start; /* 保持图片和内容左对齐 */
+    align-items: center; /* 居中对齐卡片内容 */
+    padding: 20px; /* 增加卡片内的间距 */
     box-sizing: border-box;
   }
 
   .cardFace {
-    flex-direction: row;
+    flex-direction: row; /* 图片和文字横向排列 */
+    justify-content: flex-start;
+    position: static; /* 确保内容不重叠 */
+    width: 100%;
   }
 
   .memberImage {
-    max-width: 80px;
+    max-width: 80px; /* 调整头像大小以适应横向布局 */
     max-height: 80px;
-    margin-right: 20px;
+    margin-right: 20px; /* 设置图片与文字之间的间距 */
+  }
+
+  .memberName, .memberPosition, .memberDescription {
+    text-align: left; /* 调整文本左对齐 */
   }
 
   .title {
@@ -165,6 +190,7 @@
   .description {
     font-size: 1rem;
     margin-bottom: 20px;
+    text-align: center; /* 使文本居中 */
   }
 }
 

@@ -94,6 +94,7 @@
   animation: gradientAnimation 0.4s infinite linear;
   display: inline-block; /* 确保职位与姓名在同一行 */
   margin-left: 10px; /* 调整职位与姓名的间距 */
+  vertical-align: middle; /* 保证文字垂直方向一致 */
 }
 
 @keyframes gradientAnimation {
@@ -147,7 +148,7 @@
   }
 }
 
-/* 只针对小屏幕进行的修改 */
+/* 针对小屏幕设备的修改 */
 @media (max-width: 600px) {
   .teamContainer {
     flex-direction: column; /* 纵向布局，确保每行一个卡片 */
@@ -163,7 +164,7 @@
     align-items: center; /* 垂直居中对齐内容 */
     padding: 15px; /* 增加卡片内的间距 */
     box-sizing: border-box;
-    margin-bottom: 10px; /* 设置卡片之间的垂直间距 */
+    margin-bottom: 20px; /* 设置卡片之间的垂直间距 */
   }
 
   .cardFace {

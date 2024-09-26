@@ -7,18 +7,18 @@
   align-items: center;
   background: linear-gradient(135deg, #ffe9fb, #e4fef6);
   padding-top: 20px;
-  padding-bottom: 50px; /* 为底部留出空间 */
+  padding-bottom: 50px;
 }
 
 .logoContainer {
   position: relative;
-  margin: 0 auto; /* 将 Logo 居中对齐 */
-  margin-top: 20px; /* 调整顶部间距 */
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .logoContainer svg {
-  width: 150px; /* 调整 Logo 的宽度 */
-  height: 150px; /* 调整 Logo 的高度 */
+  width: 150px;
+  height: 150px;
 }
 
 .teamContainer {
@@ -33,11 +33,11 @@
 
 .member {
   width: calc(100% / 4 - 20px);
-  max-width: 300px; /* 增加最大宽度 */
-  height: 420px; /* 增加卡片高度 */
+  max-width: 300px;
+  height: 420px;
   position: relative;
   perspective: 1000px;
-  margin-bottom: 20px; /* 增加卡片之间的间距 */
+  margin-bottom: 20px;
 }
 
 .cardFace {
@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly; /* 均匀分布内容 */
+  justify-content: space-evenly;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
@@ -74,11 +74,8 @@
 
 .memberImage {
   border-radius: 50%;
-  max-width: 100px; /* 设置头像最大宽度 */
-  max-height: 100px; /* 设置头像最大高度 */
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  max-width: 100px;
+  max-height: 100px;
 }
 
 .memberName {
@@ -87,7 +84,7 @@
 }
 
 .memberPosition {
-  font-size: 1.3em; /* 增大职位字体 */
+  font-size: 1.3em;
   background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
   background-size: 200% 200%;
   color: transparent;
@@ -107,9 +104,9 @@
 }
 
 .memberDescription {
-  text-align: center; /* 文本居中 */
+  text-align: center;
   color: #333;
-  padding: 0 20px; /* 简介的内边距 */
+  padding: 0 20px;
 }
 
 .title {
@@ -122,7 +119,7 @@
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #00796b;
-  text-align: center; /* 使文本居中 */
+  text-align: center;
 }
 
 /* 修改小屏幕布局 */
@@ -143,7 +140,7 @@
       "description description description";
     justify-content: space-between;
     align-items: center;
-    padding: 15px; /* 增加卡片内的间距 */
+    padding: 15px;
     box-sizing: border-box;
     margin-bottom: 20px;
   }

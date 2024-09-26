@@ -7,18 +7,18 @@
   align-items: center;
   background: linear-gradient(135deg, #ffe9fb, #e4fef6);
   padding-top: 20px;
-  padding-bottom: 50px; /* 为底部留出空间 */
+  padding-bottom: 50px;
 }
 
 .logoContainer {
   position: relative;
-  margin: 0 auto; /* 将 Logo 居中对齐 */
-  margin-top: 20px; /* 调整顶部间距 */
+  margin: 0 auto;
+  margin-top: 20px;
 }
 
 .logoContainer svg {
-  width: 150px; /* 调整 Logo 的宽度 */
-  height: 150px; /* 调整 Logo 的高度 */
+  width: 150px;
+  height: 150px;
 }
 
 .teamContainer {
@@ -33,8 +33,13 @@
 
 .member {
   width: calc(100% / 4 - 20px);
-  max-width: 300px; /* 增加最大宽度 */
-  height: 420px; /* 增加卡片高度 */
+  max-width: 300px;
+  height: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* 水平和垂直居中 */
+  padding: 20px;
   position: relative;
   perspective: 1000px;
 }
@@ -49,7 +54,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly; /* 均匀分布内容 */
+  justify-content: center; /* 垂直居中内容 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
@@ -73,23 +78,25 @@
 
 .memberImage {
   border-radius: 50%;
-  max-width: 120px; /* 设置头像最大宽度 */
-  max-height: 120px; /* 设置头像最大高度 */
-  margin-top: 20px;
+  max-width: 120px;
+  max-height: 120px;
+  margin-bottom: 20px; /* 调整头像和文字之间的间距 */
 }
 
 .memberName {
   font-size: 1.5em;
+  margin-bottom: 10px; /* 添加间距 */
 }
 
 .memberPosition {
-  font-size: 1.3em; /* 增大职位字体 */
+  font-size: 1.3em;
   background: linear-gradient(90deg, #FFD700, #FF8C00, #FFD700);
   background-size: 200% 200%;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
+  margin-bottom: 10px; /* 添加间距 */
 }
 
 @keyframes gradientAnimation {
@@ -106,6 +113,7 @@
   text-align: center;
   color: #333;
   min-height: 60px;
+  margin-top: 10px;
 }
 
 .title {
@@ -118,7 +126,7 @@
   font-size: 1.2rem;
   margin-bottom: 30px;
   color: #00796b;
-  text-align: center; /* 使文本居中 */
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -139,7 +147,7 @@
   .description {
     font-size: 1.1rem;
     margin-bottom: 20px;
-    text-align: center; /* 使文本居中 */
+    text-align: center;
   }
 }
 
@@ -155,7 +163,7 @@
   .description {
     font-size: 1rem;
     margin-bottom: 20px;
-    text-align: center; /* 使文本居中 */
+    text-align: center;
   }
 }
 

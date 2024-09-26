@@ -25,7 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 10px; /* 减小卡片之间的间距 */
   margin-top: 40px;
   width: 100%;
   max-width: 1200px;
@@ -37,7 +37,7 @@
   height: 420px; /* 增加卡片高度 */
   position: relative;
   perspective: 1000px;
-  margin-bottom: 20px; /* 增加卡片之间的间距 */
+  margin-bottom: 10px; /* 减少卡片之间的垂直间距 */
 }
 
 .cardFace {
@@ -50,7 +50,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-evenly; /* 均匀分布内容 */
+  justify-content: center; /* 使内容垂直居中 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
 }
@@ -74,13 +74,14 @@
 
 .memberImage {
   border-radius: 50%;
-  max-width: 120px; /* 设置头像最大宽度 */
-  max-height: 120px; /* 设置头像最大高度 */
-  margin-top: 20px;
+  max-width: 100px; /* 调整头像大小 */
+  max-height: 100px;
+  margin-right: 15px; /* 调整头像与文字的间距 */
 }
 
 .memberName {
   font-size: 1.5em;
+  display: inline-block; /* 使名字和"神车"在同一行 */
 }
 
 .memberPosition {
@@ -91,6 +92,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
+  display: inline-block; /* 使名字和职位在同一行 */
+  margin-left: 10px; /* 调整名字和"神车"之间的间距 */
+  vertical-align: middle; /* 垂直居中 */
 }
 
 @keyframes gradientAnimation {

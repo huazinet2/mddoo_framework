@@ -144,8 +144,23 @@
 }
 
 @media (max-width: 600px) {
+  .teamContainer {
+    flex-direction: column; /* 卡片纵向排列 */
+  }
+
   .member {
-    width: calc(100% / 3 - 20px); /* 调整为三列布局 */
+    display: flex;
+    flex-direction: row; /* 使卡片横向布局 */
+    justify-content: center;
+    width: 100%; /* 使卡片占满行 */
+    height: auto; /* 自动适应高度 */
+  }
+
+  .memberImage {
+    max-width: 80px; /* 调整头像大小以适应横向布局 */
+    max-height: 80px;
+    margin-top: 0;
+    margin-right: 10px; /* 为文字腾出空间 */
   }
 
   .title {

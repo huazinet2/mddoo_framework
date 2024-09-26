@@ -74,16 +74,14 @@
 
 .memberImage {
   border-radius: 50%;
-  max-width: 120px; /* 设置头像最大宽度 */
-  max-height: 120px; /* 设置头像最大高度 */
-  margin-top: 20px;
-  margin-right: 15px; /* 确保头像与文字之间有间距 */
+  max-width: 100px; /* 设置头像最大宽度 */
+  max-height: 100px; /* 设置头像最大高度 */
 }
 
 .memberName {
   font-size: 1.5em;
-  display: inline-block; /* 确保名字和“神车”在同一行 */
-  vertical-align: middle; /* 垂直居中 */
+  display: inline-block; /* 使名字和"神车"在同一行 */
+  vertical-align: middle;
 }
 
 .memberPosition {
@@ -94,9 +92,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
-  display: inline-block; /* 确保职位与名字在同一行 */
-  margin-left: 10px; /* 调整名字和职位的间距 */
-  vertical-align: middle; /* 保证文字垂直方向一致 */
+  display: inline-block; /* 使名字和职位在同一行 */
+  margin-left: 10px; /* 调整名字和"神车"之间的间距 */
+  vertical-align: middle; /* 垂直居中 */
 }
 
 @keyframes gradientAnimation {
@@ -128,29 +126,7 @@
   text-align: center; /* 使文本居中 */
 }
 
-@media (max-width: 1200px) {
-  .member {
-    width: calc(100% / 3 - 20px); /* 调整为三列布局 */
-  }
-}
-
-@media (max-width: 900px) {
-  .member {
-    width: calc(100% / 2 - 20px); /* 调整为两列布局 */
-  }
-
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .description {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
-    text-align: center; /* 使文本居中 */
-  }
-}
-
-/* 针对小屏幕设备的修改 */
+/* 修改小屏幕布局 */
 @media (max-width: 600px) {
   .teamContainer {
     flex-direction: column; /* 纵向布局，确保每行一个卡片 */
@@ -163,38 +139,33 @@
     display: flex; /* 使每个卡片内容横向排列 */
     flex-direction: row; /* 横向排列卡片内容 */
     justify-content: flex-start; /* 保持图片和内容左对齐 */
-    align-items: center; /* 垂直居中对齐内容 */
-    padding: 15px; /* 增加卡片内的间距 */
+    align-items: center; /* 居中对齐卡片内容 */
+    padding: 20px; /* 增加卡片内的间距 */
     box-sizing: border-box;
-    margin-bottom: 20px; /* 设置卡片之间的垂直间距 */
   }
 
   .cardFace {
-    flex-direction: row; /* 图片和文字横向排列 */
-    justify-content: flex-start;
-    position: static; /* 确保内容不重叠 */
+    display: flex;
     width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .memberImage, .memberName, .memberPosition, .memberDescription {
+    flex: 1; /* 使这四个元素均匀分配卡片的宽度 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 
   .memberImage {
-    max-width: 80px; /* 调整头像大小以适应横向布局 */
-    max-height: 80px;
-    margin-right: 15px; /* 设置图片与文字之间的间距 */
-    margin-left: 10px; /* 确保头像左侧也有间距 */
+    margin-right: 10px; /* 调整图片和文字之间的间距 */
   }
 
-  .memberName, .memberPosition, .memberDescription {
-    text-align: left; /* 调整文本左对齐 */
-  }
-
-  .title {
-    font-size: 2rem;
-  }
-
-  .description {
-    font-size: 1rem;
-    margin-bottom: 20px;
-    text-align: center; /* 使文本居中 */
+  .memberDescription {
+    text-align: left; /* 文本左对齐 */
   }
 }
 

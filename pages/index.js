@@ -6,28 +6,28 @@ export default function Home() {
   const teamMembers = [
     {
       name: 'mddoo',
-      position: 'Chief Shareholder',
+      position: '神车',
       description: '专注研究服务器、网络、软件以及网络协议',
       frontImage: '/members/mddoo.jpg',
       url: 'https://example.com/mddoo',
     },
     {
       name: 'Pearson',
-      position: 'Core Developer',
+      position: '神车',
       description: '擅长Python、JS、羊毛届大佬 比较社恐',
       frontImage: '/members/Pearson.jpg',
       url: 'https://example.com/pearson',
     },
     {
       name: '十点',
-      position: 'Loyal User',
+      position: '神车',
       description: '毛豆框架深度用户 羊毛领域大佬 擅长京豆等0撸活动',
       frontImage: '/members/ten.jpg',
       url: 'https://baidu.com',
     },
     {
       name: '华子',
-      position: 'Organizer',
+      position: '神车',
       description: '略懂网络 刚入门Python',
       frontImage: '/members/huazinet.jpg',
       url: 'https://example.com/huazinet',

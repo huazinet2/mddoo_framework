@@ -80,8 +80,8 @@
 
 .memberName {
   font-size: 1.5em;
-  display: inline-block; /* 使名字和"神车"在同一行 */
-  vertical-align: middle;
+  display: inline-block;
+  text-align: center; /* 名字居中 */
 }
 
 .memberPosition {
@@ -92,9 +92,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
-  display: inline-block; /* 使名字和职位在同一行 */
-  margin-left: 10px; /* 调整名字和"神车"之间的间距 */
-  vertical-align: middle; /* 垂直居中 */
+  display: inline-block;
+  text-align: center; /* 文字水平居中 */
 }
 
 @keyframes gradientAnimation {
@@ -107,10 +106,9 @@
 }
 
 .memberDescription {
-  padding: 0 20px;
-  text-align: center;
+  text-align: center; /* 文本居中 */
   color: #333;
-  min-height: 60px;
+  padding: 0 10px; /* 简介的内边距 */
 }
 
 .title {
@@ -129,34 +127,34 @@
 /* 修改小屏幕布局 */
 @media (max-width: 600px) {
   .teamContainer {
-    flex-direction: column; /* 纵向布局，确保每行一个卡片 */
+    flex-direction: column;
   }
 
   .member {
-    width: 100%; /* 每个卡片占据整行 */
-    max-width: 100%; /* 取消卡片最大宽度限制 */
-    height: auto; /* 自动调整高度 */
-    display: flex; /* 使每个卡片内容横向排列 */
-    flex-direction: row; /* 横向排列卡片内容 */
-    justify-content: flex-start; /* 保持图片和内容左对齐 */
-    align-items: center; /* 居中对齐卡片内容 */
-    padding: 20px; /* 增加卡片内的间距 */
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px; /* 增加卡片内的间距 */
     box-sizing: border-box;
-    margin-bottom: 8px; /* 确保卡片不会重叠 */
+    margin-bottom: 20px;
   }
 
   .cardFace {
-    position: relative; /* 移除 position: absolute 避免卡片重叠 */
+    position: relative;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: auto;
-    flex-direction: row;
     justify-content: space-between;
-    padding: 15px; /* 每个元素留出边距 */
   }
 
   .memberImage, .memberName, .memberPosition, .memberDescription {
-    flex: 1; /* 使这四个元素均匀分配卡片的宽度 */
+    flex: 1 1 50%; /* 每个元素占四分之一区域 */
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -165,12 +163,20 @@
   }
 
   .memberImage {
-    margin-right: 10px; /* 调整图片和文字之间的间距 */
+    flex: 1 1 25%; /* 头像占左侧区域 */
+  }
+
+  .memberName {
+    flex: 1 1 25%; /* 名字占右侧上方 */
+  }
+
+  .memberPosition {
+    flex: 1 1 25%; /* 职位占右侧中间 */
   }
 
   .memberDescription {
-    text-align: left; /* 文本左对齐 */
-    padding-left: 10px; /* 让描述部分与卡片内容保持一定间距 */
+    flex: 1 1 100%; /* 简介占下方 */
+    text-align: center; /* 文本居中 */
   }
 }
 

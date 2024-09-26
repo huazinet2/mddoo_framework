@@ -25,7 +25,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 10px; /* 减小卡片之间的间距 */
+  gap: 20px;
   margin-top: 40px;
   width: 100%;
   max-width: 1200px;
@@ -37,7 +37,7 @@
   height: 420px; /* 增加卡片高度 */
   position: relative;
   perspective: 1000px;
-  margin-bottom: 10px; /* 减少卡片之间的垂直间距 */
+  margin-bottom: 20px; /* 增加卡片之间的间距 */
 }
 
 .cardFace {
@@ -50,10 +50,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* 使内容垂直居中 */
+  justify-content: space-evenly; /* 均匀分布内容 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
-  padding: 15px; /* 增加卡片内的间距 */
 }
 
 .cardFront {
@@ -75,15 +74,14 @@
 
 .memberImage {
   border-radius: 50%;
-  max-width: 100px; /* 调整头像大小 */
-  max-height: 100px;
-  margin-right: 20px; /* 调整头像与文字的间距 */
-  margin-left: 15px; /* 给头像左边增加间距 */
+  max-width: 120px; /* 设置头像最大宽度 */
+  max-height: 120px; /* 设置头像最大高度 */
+  margin-top: 20px;
 }
 
 .memberName {
   font-size: 1.5em;
-  display: inline-block; /* 使名字和"神车"在同一行 */
+  display: inline-block; /* 确保姓名和职位在同一行 */
 }
 
 .memberPosition {
@@ -94,9 +92,8 @@
   -webkit-background-clip: text;
   background-clip: text;
   animation: gradientAnimation 0.4s infinite linear;
-  display: inline-block; /* 使名字和职位在同一行 */
-  margin-left: 10px; /* 调整名字和"神车"之间的间距 */
-  vertical-align: middle; /* 垂直居中 */
+  display: inline-block; /* 确保职位与姓名在同一行 */
+  margin-left: 10px; /* 调整职位与姓名的间距 */
 }
 
 @keyframes gradientAnimation {
@@ -110,7 +107,7 @@
 
 .memberDescription {
   padding: 0 20px;
-  text-align: left; /* 调整为左对齐 */
+  text-align: center;
   color: #333;
   min-height: 60px;
 }
@@ -150,7 +147,7 @@
   }
 }
 
-/* 只在小屏幕（600px以下）下生效的样式 */
+/* 只针对小屏幕进行的修改 */
 @media (max-width: 600px) {
   .teamContainer {
     flex-direction: column; /* 纵向布局，确保每行一个卡片 */
@@ -163,8 +160,8 @@
     display: flex; /* 使每个卡片内容横向排列 */
     flex-direction: row; /* 横向排列卡片内容 */
     justify-content: flex-start; /* 保持图片和内容左对齐 */
-    align-items: center; /* 居中对齐卡片内容 */
-    padding: 20px; /* 增加卡片内的间距 */
+    align-items: center; /* 垂直居中对齐内容 */
+    padding: 15px; /* 增加卡片内的间距 */
     box-sizing: border-box;
     margin-bottom: 10px; /* 设置卡片之间的垂直间距 */
   }
@@ -179,8 +176,8 @@
   .memberImage {
     max-width: 80px; /* 调整头像大小以适应横向布局 */
     max-height: 80px;
-    margin-right: 20px; /* 设置图片与文字之间的间距 */
-    margin-left: 15px; /* 给头像左边增加间距 */
+    margin-right: 15px; /* 设置图片与文字之间的间距 */
+    margin-left: 10px; /* 确保头像左侧也有间距 */
   }
 
   .memberName, .memberPosition, .memberDescription {

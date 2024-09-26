@@ -53,6 +53,7 @@
   justify-content: center; /* 使内容垂直居中 */
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   backdrop-filter: blur(10px);
+  padding: 15px; /* 增加卡片内的间距 */
 }
 
 .cardFront {
@@ -76,7 +77,8 @@
   border-radius: 50%;
   max-width: 100px; /* 调整头像大小 */
   max-height: 100px;
-  margin-right: 15px; /* 调整头像与文字的间距 */
+  margin-right: 20px; /* 调整头像与文字的间距 */
+  margin-left: 15px; /* 给头像左边增加间距 */
 }
 
 .memberName {
@@ -108,7 +110,7 @@
 
 .memberDescription {
   padding: 0 20px;
-  text-align: center;
+  text-align: left; /* 调整为左对齐 */
   color: #333;
   min-height: 60px;
 }
@@ -164,6 +166,7 @@
     align-items: center; /* 居中对齐卡片内容 */
     padding: 20px; /* 增加卡片内的间距 */
     box-sizing: border-box;
+    margin-bottom: 10px; /* 设置卡片之间的垂直间距 */
   }
 
   .cardFace {
@@ -177,6 +180,7 @@
     max-width: 80px; /* 调整头像大小以适应横向布局 */
     max-height: 80px;
     margin-right: 20px; /* 设置图片与文字之间的间距 */
+    margin-left: 15px; /* 给头像左边增加间距 */
   }
 
   .memberName, .memberPosition, .memberDescription {
